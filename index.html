@@ -3568,7 +3568,7 @@ body.theme-white .bottom .nav.active::before{background:var(--blue)}
     return {ok:r.ok,status:r.status,j};
   }
   /* PIN serveur : exigé avant toute sortie d'argent (transfert, transaction sécurisée, cotisation) */
-  const PIN_FNS=new Set(["wallet_transfer","escrow_create","tontine_contribute"]);
+  const PIN_FNS=new Set(["wallet_transfer","escrow_create","tontine_contribute","escrow_my_code"]);
   function ensureServerPin(){
     if((window.__pinOkUntil||0)>Date.now())return Promise.resolve(true);
     return new Promise(res=>{window.__pinResolve=res;showLock("srv");});
